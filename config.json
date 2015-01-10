@@ -1,0 +1,15 @@
+{
+    "server": "irc.mibbit.net",
+    "password": null,
+    "port": 6667,
+    "nickname": "wolfie",
+    "username": "wolfie",
+    "realname": "Ciara|Bot in tennu",
+    "channels": ["#heartless", "#bravefrontier"],
+    "nickserv": "nickserv",
+    "auth-password": "ganitlal",
+    "plugins": ["commands", "waifu", "admin", "control", "judge"],
+    "command-trigger": "@",
+    "disable-help": false,
+    "admins":[{"nickname":"TheTrueCiara"}]
+}
