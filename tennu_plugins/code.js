@@ -16,10 +16,16 @@ var CODEPlugin = {
                     }
                 },
                 '!getcode': function (command) {
-                    if (db.get(command.nickname).code == undefined)
-                        client.say("No code stored for " + command.nickname + "!")
+                    if (command.args[0] == undefined)
+                        if (db.get(command.nickname).code == undefined)
+                            client.say("No code stored for " + command.nickname + "!")
+                        else
+                            client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname).code);
                     else
-                    client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname).code);
+                        if (db.get(command.args[0]) == undefined)
+                            client.say("No code stored for " + command.args[0] + "!");
+                        else
+                            client.say(command.channel, command.args[0] + "'s code: " + db.get(command.args[0]).code);
                 }
 
             },
