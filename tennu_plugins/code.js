@@ -16,7 +16,7 @@ var CODEPlugin = {
                     }
                 },
                 '!getcode': function (command) {
-                    if (db.get(command.nickname).waifu == undefined)
+                    if (db.get(command.nickname).code == undefined)
                         client.say("No code stored for " + command.nickname + "!")
                     else
                     client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname).code);
