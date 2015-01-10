@@ -5,11 +5,11 @@
     "nickname": "wolfie",
     "username": "wolfie",
     "realname": "Ciara|Bot in tennu",
-    "channels": ["#heartless", "#bravefrontier"],
+    "channels": ["#heartless"],
     "nickserv": "nickserv",
     "auth-password": "ganitlal",
-    "plugins": ["commands", "waifu", "admin", "control", "judge"],
+    "plugins": ["commands", "waifu", "admin", "control", "judge", "mats"],
     "command-trigger": "@",
     "disable-help": false,
-    "admins":[{"nickname":"TheTrueCiara"}]
+    "admins":[{"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}]
 }

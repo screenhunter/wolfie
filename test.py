@@ -1,4 +1,4 @@
-units = open("file.txt").read().split("\n")
+units = open("raw.txt").read().split("\n")
 db = []
 for element in units:
 	element = element.split(" ")
