@@ -8,7 +8,7 @@
     "channels": ["#heartless", "#bravefrontier"],
     "nickserv": "nickserv",
     "auth-password": "ganitlal",
-    "plugins": ["commands", "waifu", "admin", "control", "judge", "mats"],
+    "plugins": ["commands", "waifu", "admin", "control", "judge", "mats", "code"],
     "command-trigger": "@",
     "disable-help": false,
     "admins":[{"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}]

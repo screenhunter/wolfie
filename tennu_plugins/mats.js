@@ -55,13 +55,11 @@ var MATSPlugin = {
 
             help: {
                 'data': [
-                    '@rem = Stores a specified unit as your waifu',
-                    '@waifu = Retrieves your waifu from the database',
-                    '@gimme = Randomly assigns you a waifu'
+                    '@matinfo <item> = Gives data from datamine about given item',
                 ]
             },
 
-            commands: ['rem', 'waifu', 'gimme']
+            commands: ['matinfo']
         }
     }
 };
