@@ -12,6 +12,6 @@
   "dependencies": {
     "tennu-admin": "^3.0.2",
     "tennu-control": "^1.2.0"
-  }
+  },
   "private":true
 }
