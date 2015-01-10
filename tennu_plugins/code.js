@@ -11,21 +11,21 @@ var CODEPlugin = {
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No code specifed!")
                     else {
-                        db.set(command.nickname, {code: command.args[0]});
+                        db.set(command.nickname.toUpperCase(), {code: command.args[0]});
                         client.say(command.channel, "Stored " + command.nickname + "'s code as " + command.args[0]);
                     }
                 },
                 '!getcode': function (command) {
                     if (command.args[0] == undefined)
-                        if (db.get(command.nickname).code == undefined)
+                        if (db.get(command.nickname.toUpperCase()).code == undefined)
                             client.say("No code stored for " + command.nickname + "!")
                         else
-                            client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname).code);
+                            client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname.toUpperCase()).code);
                     else
-                        if (db.get(command.args[0]) == undefined)
+                        if (db.get(command.args[0].toUpperCase()) == undefined)
                             client.say("No code stored for " + command.args[0] + "!");
                         else
-                            client.say(command.channel, command.args[0] + "'s code: " + db.get(command.args[0]).code);
+                            client.say(command.channel, command.args[0] + "'s code: " + db.get(command.args[0].toUpperCase()).code);
                 }
 
             },
