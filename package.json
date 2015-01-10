@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "Ciara's BOT",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "keywords": [
     "bot"
   ],
+  "repository": "https://screenhunter@bitbucket.org/screenhunter/wolfie.git",
   "author": "Rajat Khanna",
   "license": "ISC",
   "dependencies": {
     "tennu-admin": "^3.0.2",
     "tennu-control": "^1.2.0"
   }
+  "private":true
 }
