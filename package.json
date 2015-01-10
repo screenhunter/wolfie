@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ciara's BOT",
   "main": "index.js",
-  "scripts": {"run": "tennu config.json"},
+  "scripts": {"start": "tennu config.json"},
   "keywords": [
     "bot"
   ],
