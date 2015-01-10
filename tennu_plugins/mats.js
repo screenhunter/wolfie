@@ -41,7 +41,7 @@ var MATSPlugin = {
                                 client.say(command.channel, "\u0002 Recipe \u0002 Karma: " + obj[k]["recipe"]["karma"] + " | Materials: " + s);
                             }
                             else
-                                client.say(command.channel, string + "is a " + obj[k]["type"]);
+                                client.say(command.channel, string + " is a " + obj[k]["type"]);
                         }
                     });
 
