@@ -52,7 +52,7 @@ var WAIFUPlugin = {
                     if (db.get(command.nickname.toUpperCase()).waifu == undefined)
                         client.say(command.channel, "No waifu stored for " + command.nickname + "!");
                     else {
-                        db.set(command.nickname.toUpperCase(), {waifu: undefined);
+                        db.set(command.nickname.toUpperCase(), {waifu: undefined});
                         client.say(command.channel, "Deleted " + command.nickname + "'s waifu");
                     }
                 }
