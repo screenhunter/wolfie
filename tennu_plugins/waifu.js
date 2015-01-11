@@ -5,6 +5,8 @@ var LineReader = require('linereader');
 var WAIFUPlugin = {
     init: function (client, imports) {
 
+        var getDisabled = imports.vars.getDisabled;
+
         var lr = new LineReader('units.txt');
         var units = [];
         lr.on('line', function (lineno, line) {
@@ -16,6 +18,9 @@ var WAIFUPlugin = {
             handlers: {
                 
                 '!rem': function (command) {
+                    if (getDisabled())
+                        return;
+
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No waifu specifed!")
                     else {
@@ -24,12 +29,18 @@ var WAIFUPlugin = {
                     }
                 },
                 '!waifu': function (command) {
+                    if (getDisabled())
+                        return;
+
                     if (db.get(command.nickname.toUpperCase()).waifu == undefined)
                         client.say(command.channel, "No waifu stored for " + command.nickname + "!")
                     else
                         client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
                 },
                 '!gimme': function (command) {
+                    if (getDisabled())
+                        return;
+                    
                     var w = units[Math.floor(Math.random()*units.length)];
                     db.set(command.nickname.toUpperCase(), {waifu: w});
                     client.say(command.channel, "Your new waifu: " + w);
@@ -45,7 +56,8 @@ var WAIFUPlugin = {
 
             commands: ['rem', 'waifu', 'gimme']
         }
-    }
+    },
+    requiresRoles: ['vars']
 };
 
 module.exports = WAIFUPlugin;

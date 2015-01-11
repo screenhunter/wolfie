@@ -3,6 +3,8 @@ var fs = require("fs");
 var MATSPlugin = {
     init: function (client, imports) {
 
+        var getDisabled = imports.vars.getDisabled;
+
         var obj;
         fs.readFile('items.json', 'utf8', function (err, data) {
             if (err) throw err;
@@ -14,6 +16,9 @@ var MATSPlugin = {
             handlers: {
                 
                 '!matinfo': function (command) {
+                    if (getDisabled())
+                        return;
+                    
                     if (command.args[0] == undefined) {
                         client.say(command.channel, "No item specifed!")
                         return;
@@ -60,7 +65,8 @@ var MATSPlugin = {
 
             commands: ['matinfo']
         }
-    }
+    },
+    requiresRoles: ['vars']
 };
 
 module.exports = MATSPlugin;

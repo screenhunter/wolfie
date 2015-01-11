@@ -4,11 +4,16 @@ var db = dirty('database.db');
 var CODEPlugin = {
     init: function (client, imports) {
 
+        var getDisabled = imports.vars.getDisabled;
+
         return {
 
             handlers: {
                 
                 '!store': function (command) {
+                    if (getDisabled())
+                        return;
+
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No code specifed!")
                     else {
@@ -17,6 +22,9 @@ var CODEPlugin = {
                     }
                 },
                 '!getcode': function (command) {
+                    if (getDisabled())
+                        return;
+                    
                     if (command.args[0] == undefined)
                         if (db.get(command.nickname.toUpperCase()).code == undefined)
                             client.say("No code stored for " + command.nickname + "!")
@@ -38,7 +46,8 @@ var CODEPlugin = {
 
             commands: ['rem', 'waifu', 'gimme']
         }
-    }
+    },
+    requiresRoles: ['vars']
 };
 
 module.exports = CODEPlugin;
