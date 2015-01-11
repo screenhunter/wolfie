@@ -37,9 +37,9 @@ var WAIFUPlugin = {
             },
 
             help: {
-                'rem': ['@rem <target> = Stores target as your waifu'],
-                'waifu': ['@waifu = Retrieves your waifu from the database'],
-                'gimme': ['@gimme = Randomly assigns you a waifu']
+                'rem': ['@rem <target>', 'Stores target as your waifu'],
+                'waifu': ['@waifu', 'Retrieves your waifu from the database'],
+                'gimme': ['@gimme', 'Randomly assigns you a waifu']
             },
 
             commands: ['rem', 'waifu', 'gimme']
