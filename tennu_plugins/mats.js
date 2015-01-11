@@ -18,7 +18,7 @@ var MATSPlugin = {
                 '!matinfo': function (command) {
                     if (getDisabled())
                         return;
-                    
+
                     if (command.args[0] == undefined) {
                         client.say(command.channel, "No item specifed!")
                         return;
@@ -26,7 +26,7 @@ var MATSPlugin = {
 
                     var string = command.args[0];
                     for (i = 1; i < command.args.length; i++)
-                        string += " " + command.args[1];
+                        string += " " + command.args[i];
 
                     var flag = false;
                     Object.keys(obj).forEach(function(k) {

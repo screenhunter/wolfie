@@ -33,17 +33,28 @@ var WAIFUPlugin = {
                         return;
 
                     if (db.get(command.nickname.toUpperCase()).waifu == undefined)
-                        client.say(command.channel, "No waifu stored for " + command.nickname + "!")
+                        client.say(command.channel, "No waifu stored for " + command.nickname + "!");
                     else
                         client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
                 },
                 '!gimme': function (command) {
                     if (getDisabled())
                         return;
-                    
+
                     var w = units[Math.floor(Math.random()*units.length)];
                     db.set(command.nickname.toUpperCase(), {waifu: w});
                     client.say(command.channel, "Your new waifu: " + w);
+                },
+                '!gimme': function (command) {
+                    if (getDisabled())
+                        return;
+                    
+                    if (db.get(command.nickname.toUpperCase()).waifu == undefined)
+                        client.say(command.channel, "No waifu stored for " + command.nickname + "!");
+                    else {
+                        db.set(command.nickname.toUpperCase(), {waifu: undefined);
+                        client.say(command.channel, "Deleted " + command.nickname + "'s waifu");
+                    }
                 }
 
             },

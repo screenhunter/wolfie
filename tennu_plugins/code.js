@@ -24,15 +24,15 @@ var CODEPlugin = {
                 '!getcode': function (command) {
                     if (getDisabled())
                         return;
-                    
+
                     if (command.args[0] == undefined)
                         if (db.get(command.nickname.toUpperCase()).code == undefined)
-                            client.say("No code stored for " + command.nickname + "!")
+                            client.say(command.channel, "No code stored for " + command.nickname + "!")
                         else
                             client.say(command.channel, command.nickname + "'s code: " + db.get(command.nickname.toUpperCase()).code);
                     else
                         if (db.get(command.args[0].toUpperCase()) == undefined)
-                            client.say("No code stored for " + command.args[0] + "!");
+                            client.say(command.channel, "No code stored for " + command.args[0] + "!");
                         else
                             client.say(command.channel, command.args[0] + "'s code: " + db.get(command.args[0].toUpperCase()).code);
                 }
