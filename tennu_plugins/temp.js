@@ -45,15 +45,17 @@ var CMDPlugin = {
             },
 
             help: {
-                'blessme': ['@blessme = Gives the requestor Ciara\'s blessing.'],
-                'bless': ['@bless <target> = Blesses the target'],
-                'curse': ['@curse <target> = Curses the target'],
-                'kill': ['@kill <target> = Brutally murders the target'],
-                'suicide': ['@suicide = What do you think'],
-                'pick': ['@pick = In case RNG is frowning upon your soul']
+                    'command': [
+                        '@blessme', '', 'Gives the requestor Ciara\'s blessing.',
+                        '@bless <target>', '', 'Blesses the target',
+                        '@curse <target>', '', 'Curses the target',
+                        '@kill <target>', '', 'Brutally murders the target',
+                        '@suicide', '', 'What do you think',
+                        '@pick', '', 'In case RNG is frowning upon your soul'
+                        ]
             },
 
-            commands: ['bless', 'curse', 'blessme', 'kill', 'suicide', 'pick']
+            commands: ['command']
         }
     }
 };

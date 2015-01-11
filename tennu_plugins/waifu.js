@@ -37,7 +37,7 @@ var WAIFUPlugin = {
             },
 
             help: {
-                'commands': [
+                'command': [
                     '@rem = Stores a specified unit as your waifu',
                     '@waifu = Retrieves your waifu from the database',
                     '@gimme = Randomly assigns you a waifu'
