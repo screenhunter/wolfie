@@ -24,7 +24,7 @@ var WAIFUPlugin = {
                 },
                 '!waifu': function (command) {
                     if (db.get(command.nickname.toUpperCase()).waifu == undefined)
-                        client.say("No waifu stored for " + command.nickname + "!")
+                        client.say(command.channel, "No waifu stored for " + command.nickname + "!")
                     else
                         client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
                 },
