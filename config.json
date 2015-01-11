@@ -11,5 +11,5 @@
     "plugins": ["commands", "waifu", "admin", "control", "mats", "code"],
     "command-trigger": "@",
     "disable-help": false,
-    "admins":[{"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}]
+    "admins":[{"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"Atro|BB"}]
 }
