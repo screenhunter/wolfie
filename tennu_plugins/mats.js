@@ -54,9 +54,7 @@ var MATSPlugin = {
             },
 
             help: {
-                'data': [
-                    '@matinfo <item> = Gives data from datamine about given item',
-                ]
+                'matinfo': ['@matinfo <item> = Gives data from datamine about given item',]
             },
 
             commands: ['matinfo']

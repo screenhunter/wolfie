@@ -8,10 +8,10 @@ var CMDPlugin = {
 
             handlers: {
                 '!bless': function (command) {
-                    client.act(command.channel, 'gives Ciara\'s blessing to ' + command.args[0] + ' for ' + command.nickname);
-                },
-                '!blessme': function (command) {
-                    client.act(command.channel, 'gives Ciara\'s blessing to ' + command.nickname);
+                    if (command.args[0] == undefined)
+                        client.act(command.channel, 'gives Ciara\'s blessing to ' + command.nickname);
+                    else
+                        client.act(command.channel, 'gives Ciara\'s blessing to ' + command.args[0] + ' for ' + command.nickname);
                 },
                 '!curse': function (command) {
                     if (command.args[0] == undefined)
@@ -45,15 +45,16 @@ var CMDPlugin = {
             },
 
             help: {
-                'blessme': ['@blessme = Gives the requestor Ciara\'s blessing.'],
-                'bless': ['@bless <target> = Blesses the target'],
+                'bless': ['@bless <target> = Blesses the target, (blesses yourself if no target specified)'],
                 'curse': ['@curse <target> = Curses the target'],
                 'kill': ['@kill <target> = Brutally murders the target'],
                 'suicide': ['@suicide = What do you think'],
-                'pick': ['@pick = In case RNG is frowning upon your soul']
+                'pick': ['@pick = In case RNG is frowning upon your soul'],
+                'devour': ['@devour <target> = Devours the target'],
+                'pet': ['@pet = Pet wolfie!']
             },
 
-            commands: ['bless', 'curse', 'blessme', 'kill', 'suicide', 'pick']
+            commands: ['bless', 'curse', 'kill', 'suicide', 'pick', 'devour', 'pet']
         }
     }
 };

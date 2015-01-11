@@ -26,7 +26,7 @@ var WAIFUPlugin = {
                     if (db.get(command.nickname.toUpperCase()).waifu == undefined)
                         client.say("No waifu stored for " + command.nickname + "!")
                     else
-                    client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
+                        client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
                 },
                 '!gimme': function (command) {
                     var w = units[Math.floor(Math.random()*units.length)];
@@ -37,11 +37,9 @@ var WAIFUPlugin = {
             },
 
             help: {
-                'command': [
-                    '@rem = Stores a specified unit as your waifu',
-                    '@waifu = Retrieves your waifu from the database',
-                    '@gimme = Randomly assigns you a waifu'
-                ]
+                'rem': ['@rem <target> = Stores target as your waifu'],
+                'waifu': ['@waifu = Retrieves your waifu from the database'],
+                'gimme': ['@gimme = Randomly assigns you a waifu']
             },
 
             commands: ['rem', 'waifu', 'gimme']

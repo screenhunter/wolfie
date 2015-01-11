@@ -31,11 +31,8 @@ var CODEPlugin = {
             },
 
             help: {
-                'data': [
-                    '@rem = Stores a specified unit as your waifu',
-                    '@waifu = Retrieves your waifu from the database',
-                    '@gimme = Randomly assigns you a waifu'
-                ]
+                'store': ['@store <target> = Stores target as your friend code'],
+                'getcode': ['@getcode <target> = Retrieves targets friend code (returns your own if no target specified)']
             },
 
             commands: ['rem', 'waifu', 'gimme']
