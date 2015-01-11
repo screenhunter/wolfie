@@ -1,8 +1,9 @@
+var dirty = require('dirty');
+var db = dirty('database.db');
+
 var CODEPlugin = {
     init: function (client, imports) {
 
-        var dirty = require('dirty');
-        var db = dirty('database.db');
         return {
 
             handlers: {

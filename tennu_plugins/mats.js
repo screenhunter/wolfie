@@ -1,7 +1,8 @@
+var fs = require("fs");
+
 var MATSPlugin = {
     init: function (client, imports) {
 
-        var fs = require("fs");
         var obj;
         fs.readFile('items.json', 'utf8', function (err, data) {
             if (err) throw err;

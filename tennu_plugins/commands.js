@@ -1,45 +1,90 @@
+var ans = ["Yes", "No"];
+var bold = function (str) { return "\u0002" + str + "\u0002";};
+
 var CMDPlugin = {
     init: function (client, imports) {
 
-        var ans =["Yes", "No"];
-        var bold = function (str) { return "\u0002" + str + "\u0002";};
+        var disabled = false;
+        const requiresAdmin = imports.admin.requiresAdmin;
+
+        /*if (disabled)
+            return function disablable = function (handler) {
+                return function (command) {
+                    if (disabled) {
+                        return;
+                    } else{
+                        handler(command);
+                    }
+                }
+            }*/
 
         return {
 
             handlers: {
                 '!bless': function (command) {
+                    if (disabled)
+                        return;
+
                     if (command.args[0] == undefined)
                         client.act(command.channel, 'gives Ciara\'s blessing to ' + command.nickname);
                     else
                         client.act(command.channel, 'gives Ciara\'s blessing to ' + command.args[0] + ' for ' + command.nickname);
                 },
                 '!curse': function (command) {
+                    if (disabled)
+                        return;
+
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No one to curse!")
                     else
                         client.act(command.channel, 'curses ' + command.args[0] + ' for ' + command.nickname);
                 },
                 '!kill': function (command) {
+                    if (disabled)
+                        return;
+
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No one to kill!")
                     else
                         client.act(command.channel, 'brutally murders ' + command.args[0] + ' for ' + command.nickname);
                 },
                 '!devour': function (command) {
+                    if (disabled)
+                        return;
+
                     if (command.args[0] == undefined)
                         client.say(command.channel, "No one to eat!")
                     else
                         client.act(command.channel, 'devours ' + command.args[0] + ' for ' + command.nickname);
                 },
                 '!suicide': function (command) {
+                    if (disabled)
+                        return;
+
                     client.act(command.channel, 'commmits sudoku');
                 },
                 '!pick': function (command) {
+                    if (disabled)
+                        return;
+
                     client.say(command.channel, bold(ans[Math.floor(Math.random()*ans.length)]));
                 },
                 '!pet': function (command) {
+                    if (disabled)
+                        return;
+
                     client.act(command.channel, " purrs and curls up next to you.");
                 },
+                '!disable': requiresAdmin(function (command) {
+
+                    disabled = !disabled;
+
+                    if (!disabled)
+                        client.act(command.channel, 'is now enabled!');
+                    else
+                        client.act(command.channel, 'is now disabled :(');
+
+                })
 
 
             },
@@ -51,12 +96,15 @@ var CMDPlugin = {
                 'suicide': ['@suicide ', ' What do you think'],
                 'pick': ['@pick', 'In case RNG is frowning upon your soul'],
                 'devour': ['@devour <target>', 'Devours the target'],
-                'pet': ['@pet', 'Pet wolfie!']
+                'pet': ['@pet', 'Pet wolfie!'],
+                'disable': []
             },
 
             commands: ['bless', 'curse', 'kill', 'suicide', 'pick', 'devour', 'pet']
+            
         }
-    }
+    },
+    requiresRoles: ['admin']
 };
 
 module.exports = CMDPlugin;

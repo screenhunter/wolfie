@@ -1,9 +1,10 @@
+var dirty = require('dirty');
+var db = dirty('database.db');
+var LineReader = require('linereader');
+
 var WAIFUPlugin = {
     init: function (client, imports) {
 
-        var dirty = require('dirty');
-        var db = dirty('database.db');
-        var LineReader = require('linereader');
         var lr = new LineReader('units.txt');
         var units = [];
         lr.on('line', function (lineno, line) {
