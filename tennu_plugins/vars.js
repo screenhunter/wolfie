@@ -1,6 +1,7 @@
 var VARSPlugin =  {
 
     init: function (client, imports) {
+    	
 		var disabled = false;
 		const requiresAdmin = imports.admin.requiresAdmin;
 		

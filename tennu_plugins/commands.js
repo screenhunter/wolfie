@@ -6,17 +6,6 @@ var CMDPlugin = {
 
         var getDisabled = imports.vars.getDisabled;
 
-        /*if (getDisabled())
-            return function disablable = function (handler) {
-                return function (command) {
-                    if (disabled) {
-                        return;
-                    } else{
-                        handler(command);
-                    }
-                }
-            }*/
-
         return {
 
             handlers: {
