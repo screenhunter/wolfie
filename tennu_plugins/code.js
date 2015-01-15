@@ -44,7 +44,7 @@ var CODEPlugin = {
                 'getcode': ['@getcode <target>', 'Retrieves targets friend code (returns your own if no target specified)']
             },
 
-            commands: ['rem', 'waifu', 'gimme']
+            commands: ['store', 'getcode']
         }
     },
     requiresRoles: ['vars']
