@@ -365,7 +365,7 @@ var randomSummon = function () {
 
 
 
-var SummonPlugin = {
+var PokemonPlugin = {
     init: function (client, imports) {
 
     	const requiresAdmin = imports.admin.requiresAdmin;
@@ -392,4 +392,4 @@ var SummonPlugin = {
 };
 
 
-module.exports = SummonPlugin;
+module.exports = PokemonPlugin;
