@@ -747,7 +747,7 @@ var PokemonPlugin = {
         return {
             handlers: {
                 '!throw': requiresAdmin(function (command) {
-                    client.act(command.channel, command.nickname + " throws a " + randomBall() + "! Go, " + randomPokemon + "!");
+                    client.say(command.channel, command.nickname + " throws a " + randomBall() + "! Go, " + randomPokemon() + "!");
                 })
             },
 
