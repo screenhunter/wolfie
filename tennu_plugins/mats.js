@@ -40,11 +40,11 @@ var MATSPlugin = {
 
                                 obj[k]["recipe"]["materials"].forEach(function(m) {
 
-                                    s += m["count"] + " " + obj[m["id"]]["name"] + " "
+                                    s += m["count"] + " " + obj[m["id"]]["name"] + "  "
 
                                 });
 
-                                client.say(command.channel, "\u0002 Recipe \u0002 Karma: " + obj[k]["recipe"]["karma"] + " | Materials: " + s);
+                                client.say(command.channel, "\u0002 Recipe: \u0002 Karma: " + obj[k]["recipe"]["karma"] + " | Materials: " + s);
                             }
                             else
                                 client.say(command.channel, string + " is a " + obj[k]["type"]);
@@ -60,7 +60,7 @@ var MATSPlugin = {
             },
 
             help: {
-                'matinfo': ['@matinfo <item>', 'Gives data from datamine about given item',]
+                'matinfo': ['{{!}}matinfo <item>', 'Gives data from datamine about given item',]
             },
 
             commands: ['matinfo']

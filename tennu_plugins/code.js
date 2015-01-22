@@ -40,8 +40,8 @@ var CODEPlugin = {
             },
 
             help: {
-                'store': ['@store <target>', 'Stores target as your friend code'],
-                'getcode': ['@getcode <target>', 'Retrieves targets friend code (returns your own if no target specified)']
+                'store': ['{{!}}store <code>', 'Stores <code> as your friend code'],
+                'getcode': ['{{!}}getcode <target>', 'Retrieves targets friend code (returns your own if no target specified)']
             },
 
             commands: ['store', 'getcode']

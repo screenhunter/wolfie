@@ -34,7 +34,7 @@ var VARSPlugin =  {
     		},
 
     		help: {
-                'disable': ['@disable', 'Enable/Disable Wolfie'],
+                'disable': ['{{!}}disable', 'Enable/Disable Wolfie'],
             },
 
             commands: ['disable']

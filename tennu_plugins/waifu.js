@@ -45,7 +45,7 @@ var WAIFUPlugin = {
                     db.set(command.nickname.toUpperCase(), {waifu: w});
                     client.say(command.channel, "Your new waifu: " + w);
                 },
-                '!gimme': function (command) {
+                '!delete': function (command) {
                     if (getDisabled())
                         return;
                     
@@ -60,12 +60,13 @@ var WAIFUPlugin = {
             },
 
             help: {
-                'rem': ['@rem <target>', 'Stores target as your waifu'],
-                'waifu': ['@waifu', 'Retrieves your waifu from the database'],
-                'gimme': ['@gimme', 'Randomly assigns you a waifu']
+                'rem': ['{{!}}rem <target>', 'Stores target as your waifu'],
+                'waifu': ['{{!}}waifu', 'Retrieves your waifu from the database'],
+                'gimme': ['{{!}}gimme', 'Randomly assigns you a waifu'],
+                'delete': ['{{!}}delete', 'Deletes stored waifu from the database']
             },
 
-            commands: ['rem', 'waifu', 'gimme']
+            commands: ['rem', 'waifu', 'gimme', 'delete']
         }
     },
     requiresRoles: ['vars']

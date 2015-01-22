@@ -68,13 +68,13 @@ var CMDPlugin = {
             },
 
             help: {
-                'bless': ['@bless <target>', 'Blesses the target, (blesses yourself if no target specified)'],
-                'curse': ['@curse <target>', 'Curses the target'],
-                'kill': ['@kill <target>',' Brutally murders the target'],
-                'suicide': ['@suicide ', ' What do you think'],
-                'pick': ['@pick', 'In case RNG is frowning upon your soul'],
-                'devour': ['@devour <target>', 'Devours the target'],
-                'pet': ['@pet', 'Pet wolfie!'],
+                'bless': ['{{!}}bless <target>', 'Blesses the target, (blesses yourself if no target specified)'],
+                'curse': ['{{!}}curse <target>', 'Curses the target'],
+                'kill': ['{{!}}kill <target>',' Brutally murders the target'],
+                'suicide': ['{{!}}suicide ', ' What do you think'],
+                'pick': ['{{!}}pick', 'In case RNG is frowning upon your soul'],
+                'devour': ['{{!}}devour <target>', 'Devours the target'],
+                'pet': ['{{!}}pet', 'Pet wolfie!'],
             },
 
             commands: ['bless', 'curse', 'kill', 'suicide', 'pick', 'devour', 'pet']
