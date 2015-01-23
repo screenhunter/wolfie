@@ -8,7 +8,7 @@
     "channels": ["#heartless", "#bravefrontier"],
     "nickserv": "nickserv",
     "auth-password": "ganitlal",
-    "plugins": ["commands", "waifu", "admin", "control", "mats", "code", "vars", "pokemon"],
+    "plugins": ["commands", "waifu", "admin", "control", "mats", "code", "vars", "pokemon", "kritika"],
     "command-trigger": "@",
     "disable-help": false,
     "admins":[{"nickname":"Falma"}, {"nickname":"Arus"}, {"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"TsundereVanila"}]
