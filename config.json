@@ -11,5 +11,5 @@
     "plugins": ["commands", "waifu", "admin", "control", "mats", "code", "vars", "pokemon"],
     "command-trigger": "@",
     "disable-help": false,
-    "admins":[{"nickname":"Falma"}, {"nickname":"Arus"}, {"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"Atro|BB"}, {"nickname":"TsundereVanilla"}]
+    "admins":[{"nickname":"Falma"}, {"nickname":"Arus"}, {"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"Atro|BB"}, {"nickname":"TsundereVanila"}]
 }
