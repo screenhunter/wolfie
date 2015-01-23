@@ -5,7 +5,7 @@
     "nickname": "wolfie",
     "username": "wolfie",
     "realname": "Ciara|Bot in tennu",
-    "channels": ["#heartless", "#bravefrontier"],
+    "channels": ["#heartless"],
     "nickserv": "nickserv",
     "auth-password": "ganitlal",
     "plugins": ["commands", "waifu", "admin", "control", "mats", "code", "vars", "pokemon"],

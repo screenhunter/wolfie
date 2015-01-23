@@ -739,12 +739,9 @@ var randomBall = function () {
 	return ballz[index]; 
 };
 
-var success = function(poke, client, command) {
+var success = function(poke) {
 
-	var x = Math.random();
-	client.say(command.channel, x);
-
-	if (x > 0.5)
+	if (Math.floor(Math.random()*10) > 5)
 		return "Gotcha! " + poke + " was caught!"
 	else
 		return "Aww, " + poke + " got away..."
@@ -770,7 +767,7 @@ var PokemonPlugin = {
                 	client.say(command.channel, "A wild " + poke + " appeared!");
 
                 	setTimeout(function(){
-                		client.say(command.channel, success(poke, client, commmand));
+                		client.say(command.channel, success(poke));
 					}, 3000);
 
                 })
