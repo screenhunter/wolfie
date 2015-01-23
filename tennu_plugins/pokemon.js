@@ -779,14 +779,14 @@ var PokemonPlugin = {
 
                 	var poke = randomPokemon();
                 	client.say(command.channel, "A wild " + poke + " appeared!");
-                	client.say(command.channel, "What do will " + command.nickname + ' do? {{!}}ball, {{!}}stone, {{!}}bait');
+                	client.say(command.channel, "What do will " + command.nickname + ' do? @ball, @stone, @bait');
                 	db.set(command.nickname.toUpperCase(), {pokemon: poke})
 
                 }),
 
 				'!ball': requiresAdmin(function (command) {
 
-					if (db.get(command.nickname).pokemon == undefined) {
+					if (db.get(command.nickname.toUpperCase()).pokemon == undefined) {
 
 						client.say(command.channel, "No pokemon encountered!");
 						return;
@@ -796,10 +796,10 @@ var PokemonPlugin = {
 					client.say(command.channel, "A stone was thrown!");
 					var score = Math.random();
 					if (score > 0.2)
-						client.say(command.channel, db.get(command.nickname).pokemon + " got angry!");
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " got angry!");
 					else {
-						client.say(command.channel, db.get(command.nickname).pokemon + " ran away!");
-						db.set(command.nickname.toUpperCase, {pokemon:undefined});
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
+						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
 					}
 
                 })               
