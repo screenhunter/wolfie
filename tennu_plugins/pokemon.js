@@ -759,7 +759,7 @@ var PokemonPlugin = {
 
                 '!throw': requiresAdmin(function (command) {
                     client.say(command.channel, command.nickname + " throws a " + randomBall() + "! Go, " + randomPokemon() + "!");
-                },
+                }),
 
                 '!capture': requiresAdmin(function (command) {
 
