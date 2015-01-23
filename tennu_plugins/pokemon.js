@@ -744,7 +744,7 @@ var success = function(poke, client, command) {
 	var x = Math.random();
 	client.say(command.channel, x);
 
-	if (var > 0.5)
+	if (x > 0.5)
 		return "Gotcha! " + poke + " was caught!"
 	else
 		return "Aww, " + poke + " got away..."
