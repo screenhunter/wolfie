@@ -741,7 +741,7 @@ var randomBall = function () {
 
 var success = function(poke) {
 
-	if (Math.random () > 0.8)
+	if (Math.random() > 0.1)
 		return "Gotcha! " + poke + " was caught!"
 	else
 		return "Aww, " + poke + " got away..."
@@ -758,7 +758,7 @@ var PokemonPlugin = {
             handlers: {
 
                 '!throw': requiresAdmin(function (command) {
-                    client.say(command.channel, command.nickname + " throws a " + randomBall() + "! Go, " + randomPokemon() + "!");
+                    client.say(command.channel, command.nickname + " threw a " + randomBall() + "! Go, " + randomPokemon() + "!");
                 }),
 
                 '!capture': requiresAdmin(function (command) {
