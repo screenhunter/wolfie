@@ -741,7 +741,7 @@ var randomBall = function () {
 
 var success = function(poke) {
 
-	if (Math.random() > 0.8)
+	if (Math.random () > 0.8)
 		return "Gotcha! " + poke + " was caught!"
 	else
 		return "Aww, " + poke + " got away..."
