@@ -784,7 +784,7 @@ var PokemonPlugin = {
 
                 }),
 
-				'!ball': requiresAdmin(function (command) {
+				'!stone': requiresAdmin(function (command) {
 
 					if (db.get(command.nickname.toUpperCase()).pokemon == undefined) {
 
@@ -802,7 +802,51 @@ var PokemonPlugin = {
 						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
 					}
 
-                })               
+                }),
+
+				'!bait': requiresAdmin(function (command) {
+
+					if (db.get(command.nickname.toUpperCase()).pokemon == undefined) {
+
+						client.say(command.channel, "No pokemon encountered!");
+						return;
+
+					}
+
+					client.say(command.channel, "Bait was thrown!");
+					var score = Math.random();
+					if (score > 0.2)
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " took the bait!");
+					else {
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
+						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
+					}
+
+                }),
+
+				'!ball': requiresAdmin(function (command) {
+
+					if (db.get(command.nickname.toUpperCase()).pokemon == undefined) {
+
+						client.say(command.channel, "No pokemon encountered!");
+						return;
+
+					}
+
+					client.say(command.channel, "A safari ball was thrown!");
+					var score = Math.random();
+					if (score > 0.8){
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " was caught!");
+						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
+					}
+					else if (score > 0.2) {
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " knocked the ball away!");
+					} else {
+						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
+						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
+					}
+
+                })            
 
             },
 
