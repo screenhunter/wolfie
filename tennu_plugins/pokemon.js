@@ -739,15 +739,37 @@ var randomBall = function () {
 	return ballz[index]; 
 };
 
+var success = function(poke) {
+
+	if (Math.random() > 0.8)
+		return "Gotcha! " + poke + " was caught!"
+	else
+		return "Aww, " + poke + " got away..."
+
+};
+
 var PokemonPlugin = {
     init: function (client, imports) {
 
     	const requiresAdmin = imports.admin.requiresAdmin;
 
         return {
+
             handlers: {
+
                 '!throw': requiresAdmin(function (command) {
                     client.say(command.channel, command.nickname + " throws a " + randomBall() + "! Go, " + randomPokemon() + "!");
+                },
+
+                '!capture': requiresAdmin(function (command) {
+
+                	var poke = randomPokemon();
+                	client.say(command.channel, "A wild " + poke + " appeared!");
+
+                	setTimeout(function(){
+                		client.say(command.channel, success(poke));
+					}, 3000);
+
                 })
             },
 
