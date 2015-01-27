@@ -3,7 +3,9 @@
   "version": "2.0.0-pre2",
   "description": "Ciara's BOT",
   "main": "index.js",
-  "scripts": {"start": "tennu config.json"},
+  "scripts": {
+    "start": "tennu config.json"
+  },
   "keywords": [
     "bot"
   ],
@@ -12,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "tennu-admin": "^3.0.2",
-    "tennu-control": "^1.2.0"
+    "tennu-control": "^1.2.0",
+    "tennu-friend-code": "^1.0.1"
   },
-  "private":true
+  "private": true
 }

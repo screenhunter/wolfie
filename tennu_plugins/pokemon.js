@@ -781,6 +781,8 @@ var PokemonPlugin = {
                 	client.say(command.channel, "A wild " + poke + " appeared!");
                 	client.say(command.channel, "What do will " + command.nickname + ' do? @ball, @stone, @bait');
                 	db.set(command.nickname.toUpperCase(), {pokemon: poke})
+                	db.set(command.nickname.toUpperCase(), {rate: 0.5})
+                	db.set(command.nickname.toUpperCase(), {run: 0.2})
 
                 }),
 
@@ -795,9 +797,11 @@ var PokemonPlugin = {
 
 					client.say(command.channel, "A stone was thrown!");
 					var score = Math.random();
-					if (score > 0.2)
+					if (score > db.get(command.nickname.toUpperCase()).run) {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " got angry!");
-					else {
+						db.set(command.nickname.toUpperCase(), {rate: db.get(command.nickname.toUpperCase()).rate + 0.05});
+						db.set(command.nickname.toUpperCase(), {rate: db.get(command.nickname.toUpperCase()).run + 0.05});
+					} else {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
 						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
 					}
@@ -815,8 +819,11 @@ var PokemonPlugin = {
 
 					client.say(command.channel, "Bait was thrown!");
 					var score = Math.random();
-					if (score > 0.2)
+					if (score > db.get(command.nickname.toUpperCase()).run) {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " took the bait!");
+						db.set(command.nickname.toUpperCase(), {rate: db.get(command.nickname.toUpperCase()).rate - 0.05});
+						db.set(command.nickname.toUpperCase(), {rate: db.get(command.nickname.toUpperCase()).run - 0.05});
+					}
 					else {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
 						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
@@ -835,11 +842,11 @@ var PokemonPlugin = {
 
 					client.say(command.channel, "A safari ball was thrown!");
 					var score = Math.random();
-					if (score > 0.8){
+					if (score > db.get(command.nickname.toUpperCase()).rate){
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " was caught!");
 						db.set(command.nickname.toUpperCase(), {pokemon:undefined});
 					}
-					else if (score > 0.2) {
+					else if (score > db.get(command.nickname.toUpperCase()).run) {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " knocked the ball away!");
 					} else {
 						client.say(command.channel, db.get(command.nickname.toUpperCase()).pokemon + " ran away!");
