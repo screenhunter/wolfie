@@ -780,9 +780,9 @@ var PokemonPlugin = {
                 	var poke = randomPokemon();
                 	client.say(command.channel, "A wild " + poke + " appeared!");
                 	client.say(command.channel, "What do will " + command.nickname + ' do? @ball, @stone, @bait');
-                	db.set(command.nickname.toUpperCase(), {pokemon: poke})
-                	db.set(command.nickname.toUpperCase(), {rate: 0.5})
-                	db.set(command.nickname.toUpperCase(), {run: 0.2})
+                	db.set(command.nickname.toUpperCase(), {pokemon: poke});
+                	db.set(command.nickname.toUpperCase(), {rate: 0.5});
+                	db.set(command.nickname.toUpperCase(), {run: 0.2});
 
                 }),
 
