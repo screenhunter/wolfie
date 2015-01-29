@@ -40,22 +40,22 @@ var PokemonPlugin = {
 		});
 
     	const requiresAdmin = imports.admin.requiresAdmin;
-    	var getDisabled = imports.vars.getDisabled;
+    	//var getDisabled = imports.vars.getDisabled;
 
         return {
 
             handlers: {
 
                 '!throw': requiresAdmin(function (command) {
-                	if (getDisabled())
-                        return;
+                	//if (getDisabled())
+                        //return;
 
                     client.say(command.channel, command.nickname + " threw a " + randomBall() + "! Go, " + randomPokemon() + "!");
                 }),
 
                 '!encounter': requiresAdmin(function (command) {
-                	if (getDisabled())
-                        return;
+                	//if (getDisabled())
+                        //return;
 
                 	var poke = randomPokemon();
                 	client.say(command.channel, "A wild " + poke + " appeared!");
@@ -65,8 +65,8 @@ var PokemonPlugin = {
                 }),
 
 				'!stone': requiresAdmin(function (command) {
-					if (getDisabled())
-                        return;
+					//if (getDisabled())
+                        //return;
 					
 					var value = db.get(command.nickname.toUpperCase());
 
@@ -92,8 +92,8 @@ var PokemonPlugin = {
                 }),
 
 				'!bait': requiresAdmin(function (command) {
-					if (getDisabled())
-                        return;
+					//if (getDisabled())
+                        //return;
 
 					var value = db.get(command.nickname.toUpperCase());
 
@@ -120,8 +120,8 @@ var PokemonPlugin = {
                 }),
 
 				'!ball': requiresAdmin(function (command) {
-					if (getDisabled())
-                        return;
+					//if (getDisabled())
+                        //return;
 
 					var value = db.get(command.nickname.toUpperCase());
 
