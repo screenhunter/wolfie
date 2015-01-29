@@ -40,6 +40,7 @@ var PokemonPlugin = {
 		});
 
     	const requiresAdmin = imports.admin.requiresAdmin;
+    	var getDisabled = imports.vars.getDisabled;
 
         return {
 
@@ -159,7 +160,7 @@ var PokemonPlugin = {
             commands: ['throw', 'encounter', 'stone', 'bait', 'ball']
         }
     },
-    requiresRoles: ['admin']
+    requiresRoles: ['admin', 'vars']
 };
 
 
