@@ -1,6 +1,6 @@
 var dirty = require('dirty');
 var db = dirty('res/poke.db');
-
+var LineReader = require('linereader');
 
 var lr = new LineReader('res/poke.txt');
 var pokemonz = [];
