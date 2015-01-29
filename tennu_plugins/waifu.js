@@ -1,5 +1,5 @@
 var dirty = require('dirty');
-var db = dirty('database.db');
+var db = dirty('res/waifu.db');
 var LineReader = require('linereader');
 
 var WAIFUPlugin = {
@@ -7,7 +7,7 @@ var WAIFUPlugin = {
 
         var getDisabled = imports.vars.getDisabled;
 
-        var lr = new LineReader('units.txt');
+        var lr = new LineReader('res/units.txt');
         var units = [];
         lr.on('line', function (lineno, line) {
             units.push(line);

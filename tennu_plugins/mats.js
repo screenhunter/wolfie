@@ -6,7 +6,7 @@ var MATSPlugin = {
         var getDisabled = imports.vars.getDisabled;
 
         var obj;
-        fs.readFile('items.json', 'utf8', function (err, data) {
+        fs.readFile('res/items.json', 'utf8', function (err, data) {
             if (err) throw err;
             obj = JSON.parse(data);
         });
