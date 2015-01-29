@@ -5,7 +5,7 @@ var LineReader = require('linereader');
 var lr = new LineReader('res/poke.txt');
 var pokemonz = [];
 lr.on('line', function (lineno, line) {
-	units.push(line);
+	pokemonz.push(line);
 });
 
 var ballz = [
