@@ -79,7 +79,7 @@ var PokemonPlugin = {
 					client.say(command.channel, "A stone was thrown!");
 					var score = Math.random();
 					if (score > value.run) {
-						client.say(command.channel, db.get(value.pokemon + " got angry!");
+						client.say(command.channel, value.pokemon + " got angry!");
 						value.rate += 0.05;
 						value.run += 0.05;
 						db.set(command.nickname.toUpperCase(), value);
