@@ -1,7 +1,7 @@
 var dirty = require('dirty');
 var db = dirty('res/poke.db');
 var LineReader = require('linereader');
-
+var pokemonz = [];
 var ballz = [
 
 	"Poké Ball",
@@ -34,7 +34,6 @@ var PokemonPlugin = {
     init: function (client, imports) {
 
     	var lr = new LineReader('res/poke.txt');
-		var pokemonz = [];
 		lr.on('line', function (lineno, line) {
 			pokemonz.push(line);
 		});
@@ -47,7 +46,6 @@ var PokemonPlugin = {
             handlers: {
 
                 '!throw': requiresAdmin(function (command) {
-
                 	if (getDisabled())
                         return;
 

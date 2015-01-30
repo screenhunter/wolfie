@@ -18,6 +18,7 @@ var WAIFUPlugin = {
             handlers: {
                 
                 '!rem': function (command) {
+
                     if (getDisabled())
                         return;
 
@@ -38,6 +39,7 @@ var WAIFUPlugin = {
                         client.say(command.channel, command.nickname + "'s Waifu: " + db.get(command.nickname.toUpperCase()).waifu);
                 },
                 '!gimme': function (command) {
+
                     if (getDisabled())
                         return;
 
