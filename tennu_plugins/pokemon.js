@@ -48,8 +48,6 @@ var PokemonPlugin = {
 
                 '!throw': requiresAdmin(function (command) {
 
-                	client.debug("PluginVars", format("isDisabled check: %s", String(isDisabled));
-
                 	if (getDisabled())
                         return;
 
