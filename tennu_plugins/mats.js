@@ -57,8 +57,11 @@ var MATSPlugin = {
 
                                 Object.keys(loc).forEach(function(x) {
 
-                                    if(x.toUpperCase() == string.toUpperCase())
-                                        client.say(command.channel, "Locations found: " + loc[x]);
+                                    if(x.toUpperCase() == string.toUpperCase()){
+
+                                        client.say(command.channel, "Locations found: ");
+                                        client.say(command.channel, loc[x])
+                                    }
                                 });
 
                             }
