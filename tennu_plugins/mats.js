@@ -55,15 +55,9 @@ var MATSPlugin = {
                             else {
                                 client.say(command.channel, string + " is a " + inf[k]["type"]);
 
-                                Object.keys(loc).forEach(function(k) {
-
-                                    if(k == string.toUpperCase()) {
-
+                                Object.keys(loc).forEach(function(k)
+                                    if(k == string.toUpperCase())
                                         client.say(command.channel, "Locations found:" + inf[k]);
-
-                                    }
-
-                                }
 
                             }
                         }
