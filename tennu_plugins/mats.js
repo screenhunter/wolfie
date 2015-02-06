@@ -5,10 +5,16 @@ var MATSPlugin = {
 
         var getDisabled = imports.vars.getDisabled;
 
-        var obj;
+        var inf;
         fs.readFile('res/items.json', 'utf8', function (err, data) {
             if (err) throw err;
-            obj = JSON.parse(data);
+            inf = JSON.parse(data);
+        });
+
+        var loc;
+        fs.readFile('res/itemloc.json', 'utf8', function (err, data) {
+            if (err) throw err;
+            loc = JSON.parse(data);
         });
         
         return {
@@ -29,25 +35,37 @@ var MATSPlugin = {
                         string += " " + command.args[i];
 
                     var flag = false;
-                    Object.keys(obj).forEach(function(k) {
-                        if(obj[k]["name"].toUpperCase() == string.toUpperCase()) {
+                    Object.keys(inf).forEach(function(k) {
+                        if(inf[k]["name"].toUpperCase() == string.toUpperCase()) {
 
                             flag = true;
 
-                            if (obj[k]["type"] != "material") {
+                            if (inf[k]["type"] != "material") {
 
                                 var s = "";
 
-                                obj[k]["recipe"]["materials"].forEach(function(m) {
+                                inf[k]["recipe"]["materials"].forEach(function(m) {
 
-                                    s += m["count"] + " " + obj[m["id"]]["name"] + "  "
+                                    s += m["count"] + " " + inf[m["id"]]["name"] + "  "
 
                                 });
 
-                                client.say(command.channel, "\u0002 Recipe: \u0002 Karma: " + obj[k]["recipe"]["karma"] + " | Materials: " + s);
+                                client.say(command.channel, "\u0002 Recipe: \u0002 Karma: " + inf[k]["recipe"]["karma"] + " | Materials: " + s);
                             }
-                            else
-                                client.say(command.channel, string + " is a " + obj[k]["type"]);
+                            else {
+                                client.say(command.channel, string + " is a " + inf[k]["type"]);
+
+                                Object.keys(loc).forEach(function(k) {
+
+                                    if(k == string.toUpperCase()) {
+
+                                        client.say(command.channel, "Locations found:" + inf[k]);
+
+                                    }
+
+                                }
+
+                            }
                         }
                     });
 
