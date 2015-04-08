@@ -11,5 +11,4 @@
     "plugins": ["commands", "waifu", "admin", "control", "mats", "vars", "pokemon", "kritika", "friend-code"],
     "command-trigger": "@",
     "disable-help": false,
-    "admins":[{"nickname":"Falma"}, {"nickname":"Arus"}, {"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"TsundereVanila"}, {"nickname":"Nyanta"}]
-}
+    "admins":[{"nickname":"Falma"}, {"nickname":"Arus"}, {"nickname":"TheTrueCiara"}, {"nickname":"Ciara"}, {"nickname":"screenhunter"}, {"nickname":"TsundereVanila"}, {"nickname":"Nyanta"}, {"nickname":"GeoGreymon"}]
